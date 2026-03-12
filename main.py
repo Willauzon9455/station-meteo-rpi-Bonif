@@ -20,29 +20,30 @@ import time
 import board
 import adafruit_ahtx0
 
+from utils.csv_logger import CSVDataLogger
+
 
 def main():
     """Point d'entrée principal de la station météo."""
-    # Initialisation I²C et capteur
     i2c = board.I2C()
     sensor = adafruit_ahtx0.AHTx0(i2c)
+    logger = CSVDataLogger(data_dir="data")
 
     print("Station météo - AHT20")
+    print("Journalisation CSV activée")
     print("Ctrl+C pour arrêter")
     print()
 
-    # Boucle de lecture (pas de gestion KeyboardInterrupt)
     while True:
-        # Lecture des données (pas de try/except)
         temperature = sensor.temperature
         humidity = sensor.relative_humidity
 
-        # Affichage brut (pas de formatage, pas d'unités claires, pas de timestamp)
-        print(f"Température: {temperature}")
-        print(f"Humidité: {humidity}")
+        print(f"Température: {temperature:.2f} C")
+        print(f"Humidité: {humidity:.2f} %")
         print()
 
-        # Délai fixe (pas configurable)
+        logger.log_data(temperature, humidity)
+
         time.sleep(5)
 
 
