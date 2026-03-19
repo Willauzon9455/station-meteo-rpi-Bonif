@@ -393,6 +393,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "adafruit-blinka" },
     { name = "adafruit-circuitpython-ahtx0" },
+    { name = "adafruit-circuitpython-apds9960" },
     { name = "rpi-gpio" },
 ]
 
@@ -411,6 +412,7 @@ sensors = [
 requires-dist = [
     { name = "adafruit-blinka", specifier = ">=8.0.0" },
     { name = "adafruit-circuitpython-ahtx0", specifier = ">=1.0.0" },
+    { name = "adafruit-circuitpython-apds9960", specifier = ">=3.1.17" },
     { name = "adafruit-circuitpython-apds9960", marker = "extra == 'sensors'", specifier = ">=2.0.0" },
     { name = "black", marker = "extra == 'dev'", specifier = ">=23.0.0" },
     { name = "paho-mqtt", marker = "extra == 'sensors'", specifier = ">=1.6.0" },
