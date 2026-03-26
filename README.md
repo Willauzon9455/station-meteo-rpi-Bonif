@@ -67,3 +67,7 @@ Consultez les exemples dans `ressources/snippets/` pour l'intégration de chaque
 ## Améliorations possibles
 
 Ce code est volontairement minimal. Consulter les consignes fournies par votre enseignant pour la liste des améliorations à implémenter.
+
+## Amélioration 3 — APDS-9960
+
+J’ai ajouté le capteur APDS-9960 pour lire la proximité, la lumière ambiante et les valeurs RGB. Cette amélioration est dans la **catégorie A**. Je l’ai choisie pour ajouter un capteur supplémentaire au projet et respecter la contrainte matérielle de l’évaluation.
