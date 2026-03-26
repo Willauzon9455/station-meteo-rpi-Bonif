@@ -9,7 +9,7 @@ Le code de base permet de lire la température et l’humidité du capteur **AHT
 - Les lectures de température et d’humidité fonctionnent.
 - Le code donne une bonne base de départ pour une station météo IoT.
 
-## Lacunes intentionnelles du code de base
+## Lacunes du code de base
 1. **Pas de gestion d’erreurs**  
    Le programme peut crash si le capteur se déconnecte.
 
@@ -34,23 +34,3 @@ Le code de base permet de lire la température et l’humidité du capteur **AHT
 8. **Documentation minimale**  
    Le README ne décrit pas l’installation ni l’usage.
 
-## Améliorations choisies
-Pour améliorer le projet, j’ai choisi les trois améliorations suivantes :
-
-1. **Journalisation CSV avec horodatage**  
-   Catégorie **B — Traitement et logique**
-
-2. **Gestion d’erreurs robuste**  
-   Catégorie **C — Qualité du code**
-
-3. **Ajout du capteur APDS-9960**  
-   Catégorie **A — Acquisition de données**
-
-## Justification des choix
-J’ai choisi ces améliorations parce qu’elles corrigent directement plusieurs faiblesses du code initial.  
-La journalisation CSV permet de conserver un historique des mesures.  
-La gestion d’erreurs rend le programme plus stable et plus fiable.  
-L’ajout du capteur APDS-9960 permet d’ajouter de nouvelles données et de respecter la contrainte matérielle demandée dans l’évaluation.
-
-## Résumé
-Le code initial était fonctionnel, mais très minimal. Les améliorations choisies rendent la station météo plus complète, plus stable et plus utile.
