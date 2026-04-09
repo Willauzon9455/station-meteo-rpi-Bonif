@@ -17,34 +17,51 @@ LACUNES INTENTIONNELLES :
 8. Documentation minimale
 """
 import time
-import board
-import adafruit_ahtx0
-
 from utils.csv_logger import CSVDataLogger
-
+from sensors.aht20_sensor import (
+    init_sensor,
+    read_temperature,
+    read_humidity,
+    SensorConnectionError,
+    SensorReadError,
+)
 
 def main():
     """Point d'entrée principal de la station météo."""
-    i2c = board.I2C()
-    sensor = adafruit_ahtx0.AHTx0(i2c)
-    logger = CSVDataLogger(data_dir="data")
-
     print("Station météo - AHT20")
     print("Journalisation CSV activée")
-    print("Ctrl+C pour arrêter")
+    print("Gestion d'erreurs activée")
+    print("Ctrl+C pour arrêter proprement")
     print()
 
-    while True:
-        temperature = sensor.temperature
-        humidity = sensor.relative_humidity
+    try:
+        sensor = init_sensor()
+    except SensorConnectionError as exc:
+        print(f"Erreur d'initialisation: {exc}")
+        return
 
-        print(f"Température: {temperature:.2f} C")
-        print(f"Humidité: {humidity:.2f} %")
-        print()
+    logger = CSVDataLogger(data_dir="data")
 
-        logger.log_data(temperature, humidity)
+    try:
+        while True:
+            try:
+                temperature = read_temperature(sensor)
+                humidity = read_humidity(sensor)
 
-        time.sleep(5)
+                print(f"Température: {temperature:.2f} C")
+                print(f"Humidité: {humidity:.2f} %")
+                print()
+
+                logger.log_data(temperature, humidity)
+
+            except SensorReadError as exc:
+                print(f"Erreur de lecture: {exc}")
+                print("Nouvelle tentative dans 5 secondes...\n")
+
+            time.sleep(5)
+
+    except KeyboardInterrupt:
+        print("\nArrêt propre demandé par l'utilisateur.")
 
 
 if __name__ == "__main__":
