@@ -1,0 +1,47 @@
+////arret par ctrl+C
+
+Station météo améliorée - AHT20 + APDS-9960
+Journalisation CSV activée
+Gestion d'erreurs activée
+Ctrl+C pour arrêter proprement
+
+Température: 22.93 C
+Humidité: 29.01 %
+Proximité: 236
+RGB+C: 0 0 0 0
+
+Température: 22.90 C
+Humidité: 29.03 %
+Proximité: 236
+RGB+C: 198 193 148 460
+
+^C
+Arrêt propre demandé par l'utilisateur.
+
+////Debranchement
+
+Station météo améliorée - AHT20 + APDS-9960
+Journalisation CSV activée
+Gestion d'erreurs activée
+Ctrl+C pour arrêter proprement
+
+Température: 22.91 C
+Humidité: 29.03 %
+Proximité: 237
+RGB+C: 0 0 0 0
+
+Température: 26.75 C
+Humidité: 39.70 %
+Proximité: 11
+RGB+C: 680 551 399 1370
+
+Erreur de lecture AHT20 : Erreur de lecture de la température.
+Tentative de reconnexion du AHT20...
+Échec de reconnexion AHT20 : Impossible d'initialiser le capteur AHT20 après 3 tentatives.
+Erreur de lecture du APDS-9960 : [Errno 121] Remote I/O error
+APDS-9960 non disponible ou lecture impossible.
+
+Température: 31.68 C
+Humidité: 59.48 %
+Proximité: 0
+RGB+C: 0 0 0 0

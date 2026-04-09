@@ -1,0 +1,13 @@
+uv add adafruit-circuitpython-apds9960
+uv run tests/test_apds.py
+
+Proximité: 0
+RGB+C: 0 0 0 0
+Proximité: 242
+RGB+C: 167 164 126 392
+Proximité: 242
+RGB+C: 167 164 126 392
+Proximité: 242
+RGB+C: 167 165 127 392
+Proximité: 242
+RGB+C: 167 165 127 393

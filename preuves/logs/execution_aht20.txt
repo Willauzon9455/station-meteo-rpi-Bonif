@@ -1,0 +1,12 @@
+uv run main.py
+Station météo - AHT20
+Ctrl+C pour arrêter
+
+Température: 22.62248992919922
+Humidité: 29.793643951416016
+
+Température: 22.6104736328125
+Humidité: 29.760074615478516
+
+Température: 22.612762451171875
+Humidité: 29.755878448486328
