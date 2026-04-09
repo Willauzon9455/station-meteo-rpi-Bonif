@@ -91,3 +91,31 @@ Contenu :
 - `timestamp`
 - `temperature_c`
 - `humidity_percent`
+
+
+## Amélioration 1 — Journalisation CSV avec horodatage
+
+### Problème du code initial
+Le programme affichait les mesures de température et d’humidité dans la console, mais aucune donnée n’était conservée après l’exécution.
+
+### Solution apportée
+J’ai ajouté une journalisation des mesures dans un fichier CSV. Chaque lecture est enregistrée avec un horodatage au format ISO 8601, la température en Celsius et l’humidité en pourcentage.
+
+### Avantages
+- conservation des données après l’exécution
+- possibilité d’analyser les mesures plus tard
+- preuve de fonctionnement plus facile à fournir
+
+### Exemple de fichier généré
+Le programme crée un fichier dans le dossier `data/` :
+
+`meteo_data_YYYY-MM-DD.csv`
+
+Contenu :
+- `timestamp`
+- `temperature_c`
+- `humidity_percent`
+
+## Amélioration 3 — APDS-9960
+
+J’ai ajouté le capteur APDS-9960 pour lire la proximité, la lumière ambiante et les valeurs RGB. Cette amélioration est dans la **catégorie A**. Je l’ai choisie pour ajouter un capteur supplémentaire au projet et respecter la contrainte matérielle de l’évaluation.
